@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket Space Game</title>
+</head>
+<body>
+<div class="wrap">
+    <!-- Pause Menu -->
+    <div class="pause_menu" id="pauseMenu">
+        <p class="game_logo">Rocket Adventure</p>
+        <div class="nav_menu_buttons" id="navMenuButtons">
+            <!-- playToggle появляется при остановки игры нажатием кнопки паузы и позволяет игроку продолжить игру -->
+            <img src="img/Play Toggle.png" class="play_button" id="playToggle" onclick="PlayGame()" title="Играть">
+            <!-- againToggle появляется при остановки игры нажатием кнопки паузы и позволяет игроку перезапустить игру -->
+            <img src="img/Again Toggle.png" class="again_button" id="againToggle" onclick="ResetGame()" title="Заново">
+        </div>
+        <!-- ResetLevelBUtton появляется при смерти игрока для перезапуска игры -->
+        
+        <p class="menu_lose_text" id="menuloseText">Ты проиграл</p>
+        <img src="img/Again Toggle.png" class="reset_level_button" id="resetLevelToggle" onclick="ResetGame()">
+        <div class="score_block" id="menuScoreBlock">
+            <p>SCORE: </p>  <p id="pauseMenuScore"></p>
+        </div>
+        <img src="img/More Toggle.png" class="more_button" id="moreToggle" onclick="GameInfo()">
+    </div>
+    <!-- Info Menu -->
+    <div class="info_menu" id="infoMenu">
+        <p class="info_text">Привет!</p>
+        <p class="info_text">Ты попал на страницу доп.информации игры <b>Rocket Space</b>. Это 2D раннер о бесконечной погоне в которой тебе нужно уворачиваться от врагов<br><br>Твоя задача - получить как можно больше очков и не взорваться.<br><br>Управление:<br>1.Кнопками внизу экрана игры<br>2.Стрелками на вашей клавиатуре<br><br>Про баги:<br>1.Неудачный спавн ботов<br>2.Плохая адаптация под маленькие экраны</p>
+        <div class="close_info" id="closeInfo" onclick="CloseInfo()">Понятно</div>
+        <p class="about_game">Developers: Mihaylov Oleg (v0.1)</p>
+    </div>
+    
+    <div class="score_pause_container">
+        <div class="score_container">
+            <p>SCORE: </p>  <p id="score"></p>
+        </div>
+        <img src="img/Pause Toggle.png" class="pause_button" id="pauseToggle" onclick="OpenPauseMenu()" title="Пауза">
+    </div>
+    <canvas class="main_canvas" id="canvas" width="320px" height="450px"></canvas>
+    <div class="toggle_container">
+            <div id="leftToggle" title="Click"><p>LEFT</p></div>   <div id="rightToggle" title="Click"><p>RIGHT</p></div>
+            <!-- Управление слайдером  (взято из интернета) -->
+            <!-- <input type="range" min="0" max="275" value="137.5" class="main_slider" id="mainSlider"> -->
+    </div>
+</div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

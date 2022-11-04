@@ -1,0 +1,248 @@
+/* Общие стили */
+*, *:after, *:before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: .1s ease-in-out;
+}
+ul.menu {
+ 
+    list-style: none; 
+ }
+ a {
+    text-decoration: none;
+    outline: none;
+ }
+ img {
+    display: block;
+    width: 100%;
+ }
+ html, body {
+    display: table;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: monospace;
+ } 
+
+/* Основные стили */
+.wrap {
+/* display: table-cell; */
+vertical-align: middle;
+height: 600px;
+width: 320px;
+margin: 0 auto;
+text-align:center;
+}
+
+.score_pause_container {
+height: 60px;
+width: 320px;
+padding: 18px;
+margin: auto;
+margin-bottom: 5px;
+/* border-radius: 8px; */
+background-color: #fc0000;
+border: 2px solid rgb(0, 0, 0);
+}
+.score_pause_container p {display: inline; font-size: 20px; color: rgb(255, 255, 255);}
+
+.score_container {
+    display: block;
+    width: auto;
+    height: 20px;
+    float: left;
+}
+
+.pause_button {
+    height: 20px;
+    width: 20px;
+    float: right;
+}
+
+.main_canvas {
+    /* border-radius: 4px; */
+}
+
+.toggle_container {
+    height: 80px;
+    width: 320px;
+    padding: 18px; /*n 30px */
+    margin: auto;
+    /* margin: 2px 0; */
+    /* border-radius: 8px; */
+    background-color: #fc0000;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+#leftToggle {
+float: left;
+height: 40px;
+width: 80px;
+padding: 8px;
+margin-left: 55px;
+border-radius: 4px;
+background-color: rgb(0, 0, 0);
+}
+#leftToggle P {font-size: 20px; color: rgb(255, 255, 255);}
+
+#rightToggle {
+float: right;
+height: 40px;
+width: 80px;
+padding: 8px;
+margin-right: 55px;
+border-radius: 4px;
+background-color: rgb(0, 0, 0);
+}
+#rightToggle p {font-size: 20px; color: rgb(255, 255, 255);}
+
+/* Для слайдера (взято из интернета) */
+/* .main_slider {
+    -webkit-appearance: none; /* Override default CSS styles 
+    appearance: none;
+    width: 100%; /* Full-width 
+    height: 15px; /* Specified height 
+    background: #d3d3d3;  /* background 
+    outline: none; /* Remove outline 
+}
+
+ /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look)  
+.main_slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look 
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width 
+    height: 25px; /* Slider handle height 
+    background: #5c5c5c; /* Gray background 
+    cursor: pointer; /* Cursor on hover 
+    border-radius: 50%;
+}
+
+.main_slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width 
+    height: 25px; /* Slider handle height 
+    background: #5c5c5c; /* Gray background 
+    cursor: pointer; /* Cursor on hover 
+    border-radius: 50%;
+} */
+
+/* Toggle hover */
+#leftToggle:hover, #rightToggle:hover {
+    cursor: pointer;
+    background-color: rgb(85, 85, 85);
+}
+/* Menu */
+.pause_menu {
+    display: table;
+    position: fixed;
+    width: 320px;
+    height: 600px;
+    z-index: 100;
+    padding: 20px 85px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.game_logo {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.2;
+    background: linear-gradient(to right, #ffffff 40%, #575757 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    border-image: linear-gradient(to right, #ffffff 40%, #575757 100%);
+    border-image-slice: 1;
+    border-radius: 10px;
+}
+.game_logo:hover {
+    background: linear-gradient(to left, #ffffff 40%, #575757 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-image: linear-gradient(to left, #ffffff 40%, #575757 100%);
+    border-image-slice: 1;
+}
+.nav_menu_buttons {
+    width: 150px;
+    margin-top: 150px;
+}
+.play_button {
+    float: left;
+    width: auto;
+    height: 55px;
+}
+.again_button {
+    float: right;
+    width: auto;
+    height: 55px;
+}
+.reset_level_button {
+    display: none;
+    width: 64px;
+    height: auto;
+    margin: 20px auto 0 auto;
+    
+}
+.menu_lose_text {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: 80px;
+    display: none;
+}
+.menu_lose_text:hover {
+    color: rgb(255, 0, 0);
+}
+.score_block {
+    display: none;
+    bottom: 0;
+    width: 150px;
+    height: 30px;
+}
+.score_block p { display: inline; font-size: 30px; color: rgb(255, 255, 255);}
+
+.more_button {
+    display: table-row;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: auto;
+    position: absolute;
+    margin-left: 215px;
+}
+
+.pause_button:hover, .play_button:hover, .again_button:hover, .more_button:hover, .reset_level_button:hover {cursor: pointer; opacity: 80%;}
+
+.info_menu {
+    display: none;
+    position: fixed;
+    width: 320px;
+    height: 600px;
+    z-index: 100;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0);
+}
+.info_text {
+    color: rgb(255, 255, 255);
+}
+.about_game {
+    display: table-row;
+    bottom: 0;
+    color: rgb(136, 136, 136);
+}
+.close_info {
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    margin-top: 270px;
+    margin-left: 90px;
+    padding: 4px 0;
+    border-radius: 4px;
+    background-color: rgb(136, 136, 136);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+.close_info:hover {cursor: pointer; background-color: rgb(102, 102, 102);}
+
